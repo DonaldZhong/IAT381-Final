@@ -1,0 +1,82 @@
+[
+	{
+		"id": "0",
+		"name": "Aussie Pie Guy",
+		"hours": "Mon - Fri 11:00AM - 2:30PM",
+		"location": "1000 W Pender St, Vancouver, BC",
+		"latitude": "49.284782",
+		"longitude": "-123.114800"
+	},
+	{
+		"id": "1",
+		"name": "Pig on the Street",
+		"hours": "Tues - Sat 11:30AM - 3:00PM",
+		"location": "700 Howe Street, Vancouver, BC",
+		"latitude": "49.283316",
+		"longitude": "-123.119119"
+	},
+	{
+		"id": "2",
+		"name": "Feastro the Rolling Bistro",
+		"hours": "Mon - Sat 11:30AM - 2:30PM",
+		"location": "200 Thurlow Street, Vancouver, BC",
+		"latitude": "49.288503",
+		"longitude": "-123.119013"
+	},
+	{
+		"id": "3",
+		"name": "The Reef Runner",
+		"hours": "Wed - Fri 11:00AM - 2:00PM",
+		"location": "W Cordova & Thurlow Street, Vancouver, BC",
+		"latitude": "49.288382",
+		"longitude": "-123.118983"
+	},
+	{
+		"id": "4",
+		"name": "Culver City Salads",
+		"hours": "Tues - Fri 11:15AM - 2:15PM",
+		"location": "W Hastings & Thurlow Street, Vancouver, BC",
+		"latitude": "49.287938",
+		"longitude": "-123.119797"
+	},
+	{
+		"id": "5",
+		"name": "Mom’s Grilled Cheese",
+		"hours": "Mon - Fri 11:30AM - 3:00PM",
+		"location": "800 W Geirgia Street, Vancouver, BC",
+		"latitude": "49.283138",
+		"longitude": "-123.119103"
+	},
+	{
+		"id": "6",
+		"name": "Japadog",
+		"hours": " Mon - Sun 11:00AM - 10:30PM (12AM Fri, Sat)",
+		"location": "899 Burrard Street, Vancouver, BC",
+		"latitude": "49.282219",
+		"longitude": "-123.124425"
+	},
+	{
+		"id": "7",
+		"name": "Community Pizzeria",
+		"hours": "Wed 12:00PM - 3:00PM, Thurs 11:30AM - 2:30PM, Fri 12:00PM - 9:00PM, Sat 4:30PM - 8:30PM",
+		"location": "2116 Main Street, Vancouver, BC",
+		"latitude": "49.266061",
+		"longitude": "-123.100598"
+	},
+	{
+		"id": "8",
+		"name": "Fresh Local Wild",
+		"hours": "Tues - Fri 11:00AM - 3:00PM",
+		"location": "900 W Hastings Street, Vancouver, BC",
+		"latitude": "49.287157",
+		"longitude": "-123.117155"
+	},
+	{
+		"id": "9",
+		"name": "Yolk’s Street Meet Truck",
+		"hours": "Mon - Fri 8:00AM - 2:00PM",
+		"location": "505 Burrard Street, Vancouver, BC",
+		"latitude": "49.286721",
+		"longitude": "-123.118320"
+	}
+]
