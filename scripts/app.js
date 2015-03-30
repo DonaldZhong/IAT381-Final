@@ -18,9 +18,11 @@ angular
     'ngRoute',
     'ngSanitize',
     'uiGmapgoogle-maps',
+    'ngMaterial',
     'hmTouchEvents',
     'ngTouch'
   ])
+  
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -31,11 +33,16 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/contact', {
-        templateUrl: 'views/contact.html',
-        controller: 'ContactCtrl'
+      .when('/trucks', {
+        templateUrl: 'views/trucks.html',
+        controller: 'TrucksCtrl'
+      })
+      .when('/map', {
+        templateUrl: 'views/map.html',
+        controller: 'MapCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
   });
+

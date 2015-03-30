@@ -7,45 +7,31 @@
  * # MainCtrl
  * Controller of the 381FinalApp
  */
-angular.module('381FinalApp')
-  .controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
-		$scope.map = { 
-			center: { 
-				latitude: 49.2827, 
-				longitude: -123.1207 
-			}, 
+angular.module('381FinalApp', ['ngMaterial'])
+  .controller('MainCtrl', function ($scope, $timeout, $mdBottomSheet) {
+  	$scope.openBottomSheet = function($event) {
+  		$scope.alert = '';
+  		$mdBottomSheet.show({
+  			templateUrl: 'views/sheetTemplate.html',
+  			controller: 'GridBottomSheetCtrl',
+  			targetEvent: $event
+  		}).then(function(clickedItem) {
+  			$scope.alert = clickedItem.name + 'clicked!';
+  		});
+	};
+})
+  
+  .controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
+	  $scope.items = [
+  		{name: 'Home',    icon: 'images/i1.png', urlPath:'#/main'},
+  		{name: 'Map',     icon: 'test', 		 urlPath: '#map'},
+  		{name: 'Trucks',  icon: 'test', 		 urlPath:'#trucks'},
+  		{name: 'About',   icon: 'test',			 urlPath:'#/about'},
+  	];
 
-			zoom: 13 };
+  	$scope.listItemClick = function($index) {
+  		var clickedItem = $scope.items[$index];
+  		$mdBottomSheet.hide(clickedItem);
+	  };
+ });
 
-		$scope.markers = [];
-		var idCount = 0;
-
-		$http.get('data.json').success(function(data) {
-			$scope.trucks = data;
-
-			 angular.forEach(data, function(object) { 
-			 	var marker = {
-			 		id: idCount, 
-			 		coords: {
-			 			latitude: object.latitude, 
-			 			longitude: object.longitude
-			 		}};
-				$scope.markers.push(marker);
-				idCount++;
-				$scope.windowOptions = { visible: false };
-					$scope.onClick = function() {
-					$scope.windowOptions.visible = !$scope.windowOptions.visible;
-		};
-		$scope.closeClick = function() {
-			$scope.windowOptions.visible = false;
-		};
-
-
-			});
-		});
-
-
-
-
-
-  }]);
