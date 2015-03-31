@@ -1,7 +1,7 @@
 <md-bottom-sheet class="md-grid">
   <md-list>
-    <md-item ng-repeat="item in items">
-      <md-button class="md-grid-item-content" aria-label="{{item.name}}">
+    <md-item ng-repeat="item in items track by $index">
+      <md-button ng-click="listItemClick($index)" class="md-grid-item-content" aria-label="{{item.name}}">
 <!--       <a href="#/">
       <a href="#/map">
       <a href="#/trucks">

@@ -7,30 +7,34 @@
  * # MainCtrl
  * Controller of the 381FinalApp
  */
-angular.module('381FinalApp', ['ngMaterial'])
-  .controller('MainCtrl', function ($scope, $timeout, $mdBottomSheet) {
-  	$scope.openBottomSheet = function($event) {
+APP.controller('MainCtrl', function ($scope, $location, $timeout, $mdBottomSheet) {
+  	
+
+    $scope.openBottomSheet = function($event) {
   		$scope.alert = '';
   		$mdBottomSheet.show({
   			templateUrl: 'views/sheetTemplate.html',
   			controller: 'GridBottomSheetCtrl',
   			targetEvent: $event
   		}).then(function(clickedItem) {
-  			$scope.alert = clickedItem.name + 'clicked!';
+  			$scope.alert = clickedItem.name + ' clicked!';
+        $location.path  (clickedItem.urlPath);
+
   		});
 	};
-})
-  
-  .controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
+});
+
+APP.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
 	  $scope.items = [
-  		{name: 'Home',    icon: 'images/i1.png', urlPath:'#/main'},
-  		{name: 'Map',     icon: 'test', 		 urlPath: '#map'},
-  		{name: 'Trucks',  icon: 'test', 		 urlPath:'#trucks'},
-  		{name: 'About',   icon: 'test',			 urlPath:'#/about'},
+  		{name: 'Home',    icon: 'images/i1.png', urlPath:'/'},
+  		{name: 'Map',     icon: 'test', 		 urlPath: '/map'},
+  		{name: 'Trucks',  icon: 'test', 		 urlPath:'/trucks'},
+  		{name: 'About',   icon: 'test',			 urlPath:'/about'},
   	];
 
   	$scope.listItemClick = function($index) {
   		var clickedItem = $scope.items[$index];
+      console.log(clickedItem);
   		$mdBottomSheet.hide(clickedItem);
 	  };
  });

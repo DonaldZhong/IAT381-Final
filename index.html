@@ -11,26 +11,10 @@
 
   </head>
   <body ng-app="381FinalApp">
+  
     <div ng-view=""></div>
 
-    <md-content>
-      <md-toolbar>
-        <h2 class="md-toolbar-tools">
-          <span>Food Truck Finder</span>
-        </h2>
-      </md-toolbar>
-    </md-content>
-
-    <div ng-controller="MainCtrl">
-      <div layout='column' layout-sm='row' layout-align='center'>
-      <md-button ng-click="openBottomSheet()">
-        Open a Bottom Sheet!
-      </md-button>
-      </div>
-        <b layout="row" layout-align="center center" layout-margin>
-          {{alert}}
-        </b>
-    </div>
+    
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>

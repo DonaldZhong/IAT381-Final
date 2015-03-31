@@ -8,9 +8,9 @@
  * Controller of the 381FinalApp
  */
  
-angular.module('381FinalApp')
-  .controller('MapCtrl', ['$scope', '$http', function ($scope, $http) {
-		$scope.map = { 
+APP.controller('MapCtrl', ['$scope', '$http', function ($scope, $http) {
+		console.log("on map page");
+		$scope.map = { 			
 			center: { 
 				latitude: 49.2827, 
 				longitude: -123.1207 

@@ -7,8 +7,7 @@
  * # TrucksCtrl
  * Controller of the 381FinalApp
  */
-angular.module('381FinalApp')
-  .controller('TrucksCtrl', function ($scope) {
+APP.controller('TrucksCtrl', function ($scope) {
 
 
   });

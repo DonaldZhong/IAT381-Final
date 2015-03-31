@@ -7,3 +7,24 @@
 <b layout="row" layout-align="center center" layout-margin>
 	{{alert}}
 </b> -->
+
+
+<md-content>
+      <md-toolbar>
+        <h2 class="md-toolbar-tools">
+        <!-- <span>Food Truck Finder </span> -->
+          <img src='images/icon.png' width="128px" height='60px'></img>
+        </h2>
+      </md-toolbar>
+    </md-content>
+
+    <div ng-controller="MainCtrl">
+      <div layout='column' layout-sm='row' layout-align='center'>
+      <md-button ng-click="openBottomSheet()">
+        Open a Bottom Sheet!
+      </md-button>
+      </div>
+        <b layout="row" layout-align="center center" layout-margin>
+          {{alert}}
+        </b>
+    </div>

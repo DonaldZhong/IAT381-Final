@@ -8,7 +8,10 @@
  *
  * Main module of the application.
  */
-angular
+
+ console.log('app.js');
+
+var APP = angular
   .module('381FinalApp', [
     'ngAnimate',
     'ngAria',
@@ -21,9 +24,9 @@ angular
     'ngMaterial',
     'hmTouchEvents',
     'ngTouch'
-  ])
+  ]);
   
-  .config(function ($routeProvider) {
+  APP.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -40,9 +43,6 @@ angular
       .when('/map', {
         templateUrl: 'views/map.html',
         controller: 'MapCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
   });
 
