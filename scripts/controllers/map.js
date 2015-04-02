@@ -36,6 +36,7 @@ APP.controller('MapCtrl', ['$scope', '$http', function ($scope, $http) {
 				$scope.windowOptions = { visible: false };
 				
 				$scope.onClick = function() {
+					
 					$scope.windowOptions.visible = !$scope.windowOptions.visible;
 				};
 		

@@ -9,8 +9,6 @@
  * Main module of the application.
  */
 
- console.log('app.js');
-
 var APP = angular
   .module('381FinalApp', [
     'ngAnimate',
@@ -52,12 +50,31 @@ var APP = angular
       .accentPalette('red');
   });
 
+  APP.config(function($mdIconProvider) {
+    $mdIconProvider
+      .icon('home', 'images/home.svg', 64)
+      .icon('map', 'images/map.svg', 64)
+      .icon('truck', 'images/truck.svg', 64)
+      .icon('about', 'images/about.svg', 64)
+  });
+
+  APP.run(function($http, $templateCache) {
+    var urls = [
+      'images/home.svg',
+      'images/map.svg',
+      'images/truck.svg',
+      'images/about.svg'
+    ];
+
+
+    angular.forEach(urls, function(url) {
+      $http.get(url, {cache: $templateCache});
+    });
+  });
+
 
 APP.controller('MainCtrl', function ($scope, $location, $timeout, $mdBottomSheet) {
-    
-
     $scope.openBottomSheet = function($event) {
-      $scope.alert = '';
       $mdBottomSheet.show({
         templateUrl: 'views/sheetTemplate.html',
         controller: 'GridBottomSheetCtrl',
@@ -72,11 +89,13 @@ APP.controller('MainCtrl', function ($scope, $location, $timeout, $mdBottomSheet
 
 APP.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
     $scope.items = [
-      {name: 'Home',    icon: 'images/home.png', urlPath:'/'},
-      {name: 'Map',     icon: 'test',      urlPath: '/map'},
-      {name: 'Trucks',  icon: 'test',      urlPath:'/trucks'},
-      {name: 'About',   icon: 'test',      urlPath:'/about'},
+      {name: 'Home',    icon: 'home', urlPath:'/'},
+      {name: 'Map',     icon: 'map',      urlPath: '/map'},
+      {name: 'Trucks',  icon: 'truck',      urlPath:'/trucks'},
+      {name: 'About',   icon: 'about',      urlPath:'/about'},
     ];
+
+    console.log("items.icon");
 
     $scope.listItemClick = function($index) {
       var clickedItem = $scope.items[$index];
