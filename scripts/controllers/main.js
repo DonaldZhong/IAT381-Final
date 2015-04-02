@@ -18,15 +18,15 @@ APP.controller('MainCtrl', function ($scope, $location, $timeout, $mdBottomSheet
   			targetEvent: $event
   		}).then(function(clickedItem) {
   			$scope.alert = clickedItem.name + ' clicked!';
-        $location.path  (clickedItem.urlPath);
+        	$location.path (clickedItem.urlPath);
 
-  		});
+		});
 	};
 });
 
 APP.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
 	  $scope.items = [
-  		{name: 'Home',    icon: 'images/i1.png', urlPath:'/'},
+  		{name: 'Home',    icon: 'images/home.png', urlPath:'/'},
   		{name: 'Map',     icon: 'test', 		 urlPath: '/map'},
   		{name: 'Trucks',  icon: 'test', 		 urlPath:'/trucks'},
   		{name: 'About',   icon: 'test',			 urlPath:'/about'},
