@@ -11,8 +11,28 @@
 
   </head>
   <body ng-app="381FinalApp">
+      <md-content>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <img src='images/icon.png' class='ftIcon'></img>
+           <span flex></span>
+              <h2>Food Truck Finder</h2>
+                <span flex></span>
+
+        <div ng-controller="MainCtrl">
+          <div layout='column' layout-sm='row' layout-align='center'>
+            <md-button aria-label="menu" ng-click="openBottomSheet()">
+              <img src='images/hamburger.png'></img>
+            </md-button>
+          </div>
+        </div>
+      </div>
+     </md-toolbar>
+    </md-content>
   
     <div ng-view=""></div>
+
+
 
     
 
@@ -35,7 +55,6 @@
     <script src="bower_components/lodash/dist/lodash.min.js"></script>
 
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/map.js"></script>
         <script src="scripts/controllers/trucks.js"></script>
