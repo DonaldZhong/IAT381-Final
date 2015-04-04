@@ -1,12 +1,32 @@
-.ftIcon{
-  width: 14%;
-  height: 100%;
+#infoWindows {
+  
 }
 
-.angular-google-map-container { 
-  height: 500px;
-  width: 100%;
+#panel {
+      position: fixed;
+      margin-right: auto;
+      margin-left: auto;
+      left: 500px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
 }
+
+
+.ftIcon{
+  min-width: 10%;
+  min-height: 63%;
+  max-width: 20%;
+  max-height: 100%;
+}
+
+.map-container { 
+  min-height: 500px;
+  height: 95vh;
+  width: 100vw;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -167,7 +187,8 @@ body {
 .accordion-section-content {
   padding:15px;
   
-/*  display:none;
-*/}
+  display:none;
+}
 
 /**************end of accordion****************/
+

@@ -18,7 +18,7 @@ var APP = angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'uiGmapgoogle-maps',
+    'ngMap',
     'ngMaterial',
     'hmTouchEvents',
     'ngTouch'
@@ -80,7 +80,6 @@ APP.controller('MainCtrl', function ($scope, $location, $timeout, $mdBottomSheet
         controller: 'GridBottomSheetCtrl',
         targetEvent: $event
       }).then(function(clickedItem) {
-        $scope.alert = clickedItem.name + ' clicked!';
           $location.path (clickedItem.urlPath);
 
     });
@@ -89,18 +88,17 @@ APP.controller('MainCtrl', function ($scope, $location, $timeout, $mdBottomSheet
 
 APP.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
     $scope.items = [
-      {name: 'Home',    icon: 'home', urlPath:'/'},
-      {name: 'Map',     icon: 'map',      urlPath: '/map'},
+      {name: 'Home',    icon: 'home',       urlPath:'/'},
+      {name: 'Map',     icon: 'map',        urlPath: '/map'},
       {name: 'Trucks',  icon: 'truck',      urlPath:'/trucks'},
       {name: 'About',   icon: 'about',      urlPath:'/about'},
     ];
 
-    console.log("items.icon");
 
     $scope.listItemClick = function($index) {
       var clickedItem = $scope.items[$index];
-      console.log(clickedItem);
       $mdBottomSheet.hide(clickedItem);
+      
     };
  });
 

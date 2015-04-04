@@ -4,10 +4,12 @@
       <md-button ng-click="listItemClick($index)" class="md-grid-item-content" aria-label="{{item.name}}">
 
         <div class="md-icon-container">
-        <md-icon md-svg-src="{{item.icon}}"></md-icon>
+          <md-icon md-svg-src="{{item.icon}}"></md-icon>
           <md-inline-grid-icon icon="{{item.icon}}"></md-inline-grid-icon>
         </div>
+
         <div class="md-grid-text"> {{ item.name }} </div>
+      
       </md-button>
     </md-item>
   </md-list>

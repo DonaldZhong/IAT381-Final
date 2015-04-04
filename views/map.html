@@ -1,13 +1,127 @@
-<div class="mapContainer">
+<div class="map-container">
+
+	<!-- <map center="49.2827, -123.1207" zoom="13" class='map-container'></map> -->
+	<map center="current-location" zoom="11" class="map-container">
+
+		<marker position='current-location' title="CurrentPosition"></marker>
+
+<!-- 	<info-window position="current-location" visible="false">
+        	<span>You are Here.</span>
+        </info-window> -->
+
+        <marker position="49.284782, -123.114800" on-Click="showInfoWindow(event,'bar1')" animation="DROP" draggable="false" visible="true" id="aussie"></marker>
+        <marker position="49.283316, -123.119119" on-click="showInfoWindow(event, 'bar2')" animation="DROP" draggable="false" visible="true" id="pigg"></marker>
+        <marker position="49.288503, -123.119013" on-click="showInfoWindow(event, 'bar3')" animation="DROP" draggable="false" visible="true" id="feastro"></marker>
+        <marker position="49.288382, -123.118983" on-click="showInfoWindow(event, 'bar4')" animation="DROP" draggable="false" visible="true" id="reef"></marker>
+        <marker position="49.287938, -123.119797" on-click="showInfoWindow(event, 'bar5')" animation="DROP" draggable="false" visible="true" id="culver"></marker>
+        <marker position="49.283138, -123.119103" on-click="showInfoWindow(event, 'bar6')" animation="DROP" draggable="false" visible="true" id="grilled"></marker>
+        <marker position="49.282219, -123.124425" on-click="showInfoWindow(event, 'bar7')" animation="DROP" draggable="false" visible="true" id="japadog"></marker>
+        <marker position="49.266061, -123.100598" on-click="showInfoWindow(event, 'bar8')" animation="DROP" draggable="false" visible="true" id="community"></marker>
+        <marker position="49.287157, -123.117155" on-click="showInfoWindow(event, 'bar9')" animation="DROP" draggable="false" visible="true" id="fresh"></marker>
+        <marker position="49.286721, -123.118320" on-click="showInfoWindow(event, 'bar10')" animation="DROP" draggable="false" visible="true" id="yolks"></marker>
+
+         <info-window id="bar1" visible-on-marker="aussie">
+         	<div id="infoWindows" ng-non-bindable>
+         		<h3>Name:</h3>
+         			<br>
+         		<h3>Hours:</h3>
+         			<br>
+         		<h3>Location:</h3>
+         			<br>
+         		
+         	</div>
+         </info-window>
+
+         <info-window id="bar2" visible-on-marker="pigg" visible="false">
+         	<div id="infoWindows">
+         		
+         	</div>         
+         </info-window>
+
+         <info-window id="bar3" visible-on-marker="feastro" visible="false">
+         	<div id="infoWindows">
+         		
+         	</div>
+         </info-window>
+
+         <info-window id="bar4" visible-on-marker="reef" visible="false">
+         	<div id="infoWindows">
+         		
+         	</div>
+         </info-window>
+
+         <info-window id="bar5" visible-on-marker="culver" visible="false">
+         	<div id="infoWindows">
+         		
+         	</div>
+         </info-window>
+
+         <info-window id="bar6" visible-on-marker="grilled" visible="false">
+         	<div id="infoWindows">
+         		
+         	</div>
+         </info-window>
+
+         <info-window id="bar7" visible-on-marker="japadog" visible="false">
+         	<div id="infoWindows">
+         		
+         	</div>
+         </info-window>
+
+         <info-window id="bar8" visible-on-marker="community" visible="false">
+         	<div id="infoWindows">
+         		
+         	</div>
+         </info-window>
+
+         <info-window id="bar9" visible-on-marker="fresh" visible="false">
+         	<div id="infoWindows">
+         		
+         	</div>
+         </info-window>
+
+         <info-window id="bar10" visible-on-marker="yolks" >
+         	<div id="infoWindows">
+         		
+         	</div>         
+         </info-window>
+
+
+        <custom-control position="TOP_CENTER" index="1" on-click="click()" id="panel">
+        	<button id="drop">Downtown</button>
+        </custom-control>
+
+        <custom-control id="panel" position='TOP_CENTER'>
+        	<button id="drop" ng-click="hideMarkers()">Hide Markers</button>
+       	</custom-control>
+
+        <custom-control id="panel" position='TOP_CENTER'>
+        	<button id="drop" ng-click="showMarkers()">Show Markers</button>
+       	</custom-control>
+
+        <custom-control position="TOP_CENTER" index="2" on-click="click2()" id="panel">
+        	<button id="drop">Your Location</button>
+        </custom-control>
+</div>
+
+<!-- <div class="mapContainer">
  <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-  <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id" click="onClick()" events="marker.events" ng-repeat="marker in markers"> 
-    <ui-gmap-window options="windowOptions" closeClick="closeClick()">
-      <div hm-tap"onHammer">
-     
-    
-    </ui-gmap-window>
+  <ui-gmap-marker 
+  	idkey="	marker.id" 
+  	coords="marker.coords" 
+  	click="marker.click"
+  	options="marker.options" 
+  	ng-repeat="marker in markers"> 
+
+    	<ui-gmap-window
+    		idkey='idCount'
+    		models='varTrucks'
+    		options="windowOptions"
+    		closeClick="closeClick()">
+    	</ui-gmap-window>
+
   </ui-gmap-marker>
  </ui-gmap-google-map>
 </div>
 
-<br>
+<br> -->
