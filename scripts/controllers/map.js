@@ -50,7 +50,7 @@
 
      $http.get('data.json').success(function(data) {
          $scope.varTrucks = data;
-         console.log($scope.varTrucks[1].name);
+         console.log($scope.varTrucks);
      });
 
 
