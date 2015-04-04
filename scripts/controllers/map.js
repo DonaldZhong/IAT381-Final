@@ -20,6 +20,7 @@
   })
 };
 
+
  	var downTownVan = new google.maps.LatLng(49.2827, -123.1207);
 
  	var marker;
@@ -34,7 +35,6 @@
  		map.setZoom(13);
  	}
 
-
 	$scope.showMarkers = function() {
         for (var key in $scope.map.markers) {
           $scope.map.markers[key].setMap($scope.map);
@@ -46,6 +46,15 @@
           $scope.map.markers[key].setMap(null);
         };
       };
+
+
+     $http.get('data.json').success(function(data) {
+         $scope.varTrucks = data;
+         console.log($scope.varTrucks[1].name);
+     });
+
+
+
 
       // var aussie = new google.maps.LatLng(49.284782, -123.114800);
       // var pigg = new google.maps.LatLng(49.283316, -123.119119);

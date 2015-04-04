@@ -58,7 +58,10 @@
 	{
 		"id": "7",
 		"name": "Community Pizzeria",
-		"hours": "Wed 12:00PM - 3:00PM, Thurs 11:30AM - 2:30PM, Fri 12:00PM - 9:00PM, Sat 4:30PM - 8:30PM",
+		"hours": "Wed 12:00PM - 3:00PM",   
+		"hours2": "Thurs 11:30AM - 2:30PM",
+		"hours3": "Fri 12:00PM - 9:00PM", 
+		"hours4": "Sat 4:30PM - 8:30PM",
 		"location": "2116 Main Street, Vancouver, BC",
 		"latitude": "49.266061",
 		"longitude": "-123.100598"
