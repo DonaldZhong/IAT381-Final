@@ -75,6 +75,7 @@ var APP = angular
 
 APP.controller('MainCtrl', function ($scope, $location, $timeout, $mdBottomSheet) {
     $scope.openBottomSheet = function($event) {
+      if(!$event.bubbles) return;
       $mdBottomSheet.show({
         templateUrl: 'views/sheetTemplate.html',
         controller: 'GridBottomSheetCtrl',
