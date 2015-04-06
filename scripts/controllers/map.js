@@ -26,6 +26,8 @@ APP.controller('MapCtrl', ['$scope', '$http', '$timeout', function($scope, $http
     var marker;
     var map;
 
+
+
     $scope.$on('mapInitialized', function(evt, evtMap) {
         map = evtMap;
     });
