@@ -30,9 +30,9 @@ var APP = angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/favourite', {
+        templateUrl: 'views/favourite.html',
+        controller: 'FavouriteCtrl'
       })
       .when('/trucks', {
         templateUrl: 'views/trucks.html',
@@ -55,7 +55,7 @@ var APP = angular
       .icon('home', 'images/home.svg', 64)
       .icon('map', 'images/map.svg', 64)
       .icon('truck', 'images/truck.svg', 64)
-      .icon('about', 'images/about.svg', 64)
+      .icon('favourite', 'images/favourite.svg', 64)
   });
 
   APP.run(function($http, $templateCache) {
@@ -63,7 +63,7 @@ var APP = angular
       'images/home.svg',
       'images/map.svg',
       'images/truck.svg',
-      'images/about.svg'
+      'images/favourite.svg'
     ];
 
 
@@ -92,7 +92,7 @@ APP.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
       {name: 'Home',    icon: 'home',       urlPath:'/'},
       {name: 'Map',     icon: 'map',        urlPath: '/map'},
       {name: 'Trucks',  icon: 'truck',      urlPath:'/trucks'},
-      {name: 'About',   icon: 'about',      urlPath:'/about'},
+      {name: 'Faves',   icon: 'favourite',      urlPath:'/favourite'},
     ];
 
 
