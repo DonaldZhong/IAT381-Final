@@ -53,17 +53,17 @@ var APP = angular
   APP.config(function($mdIconProvider) {
     $mdIconProvider
       .icon('home', 'images/home.svg', 64)
-      .icon('map', 'images/map.svg', 64)
       .icon('truck', 'images/truck.svg', 64)
       .icon('favourite', 'images/favourite.svg', 64)
+      .icon('map', 'images/map.svg', 64)
   });
 
   APP.run(function($http, $templateCache) {
     var urls = [
       'images/home.svg',
-      'images/map.svg',
       'images/truck.svg',
-      'images/favourite.svg'
+      'images/favourite.svg',
+      'images/map.svg'
     ];
 
 
@@ -90,9 +90,9 @@ APP.controller('MainCtrl', function ($scope, $location, $timeout, $mdBottomSheet
 APP.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
     $scope.items = [
       {name: 'Home',    icon: 'home',       urlPath:'/'},
-      {name: 'Map',     icon: 'map',        urlPath: '/map'},
       {name: 'Trucks',  icon: 'truck',      urlPath:'/trucks'},
       {name: 'Faves',   icon: 'favourite',  urlPath:'/favourite'},
+      {name: 'Map',     icon: 'map',        urlPath: '/map'}
     ];
 
 

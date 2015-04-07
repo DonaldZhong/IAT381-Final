@@ -82,4 +82,55 @@ APP.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
       });
 
 
+$(".liked").on("click", function() {
+    $(this).removeClass("fail");
+    $(this).addClass("pre-animation");
+    var heart = $(this);
+
+    var $feedBackbox = $('.feedBack-popup'); 
+    $feedBackbox.css({
+    'margin-top' : -$feedBackbox.outerHeight()/2
+        });
+        getFeedBackBox();
+
+
+    function getFeedBackBox() {
+        $('.feedBack-box').addClass('ison'); 
+    }
+
+    function closeFeedBackBox () {
+
+    }
+  
+    if ($(heart).hasClass("favourite")) {
+        $(this).removeClass("pre-animation");
+        $(this).removeClass("favourite");
+    }
+
+    else {
+        $(".pre-animation").one("transitionend", function(){
+            $(this).removeClass("pre-animation");
+            $(this).addClass("waiting");
+            setTimeout( function() {
+                $(".liked").one("animationiteration webkitAnimationIteration", function(){
+                    $(heart).removeClass("waiting");
+
+                    if ($("#fail").is(":checked")) {
+                        $(heart).addClass("fail");
+                    }
+                    else {
+                        $(heart).toggleClass("favourite");
+                    }
+                });
+            }, responseTime(450, 1000));
+        });
+    }
+});
+
+function responseTime(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+
   });
