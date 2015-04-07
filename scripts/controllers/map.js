@@ -8,6 +8,7 @@
  * Controller of the 381FinalApp
  */
 APP.controller('MapCtrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
+    
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = new google.maps.LatLng(position.coords.latitude,
