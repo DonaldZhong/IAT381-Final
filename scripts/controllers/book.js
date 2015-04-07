@@ -81,7 +81,7 @@ $(document).ready(function() {
     function displayNotes() {
 
         var transaction = db.transaction(["note"], "readonly");
-        var content = "<table class='table table-bordered table-striped'><thead><tr><th>Title</th><th>Updated</th>";
+        var content = "<table class='table table-bordered table-striped'><thead><tr><th>Name</th><th>Date Updated</th>";
 
         transaction.oncomplete = function(event) {
             $("#noteList").html(content);
@@ -129,7 +129,8 @@ $(document).ready(function() {
             var note = request.result;
             $("#key").val(note.id);
             $("#title").val(note.title);
-            $("#email").val(note.email);
+            $("#number").val(note.number);
+            $("#truck").val(note.truck);
             $("#body").val(note.body);
             $noteDetail.hide();
             $noteForm.show();
@@ -153,7 +154,8 @@ $(document).ready(function() {
 
     $("#addNoteButton").on("click", function(e) {
         $("#title").val("");
-        $("#email").val("");
+        $("#number").val("");
+        $("#truck").val("");
         $("#body").val("");
         $("#key").val("");
         $noteDetail.hide();
@@ -163,7 +165,8 @@ $(document).ready(function() {
     $("#saveNoteButton").unbind().on("click", function() {
       console.log("button clicked once");
         var title = $("#title").val();
-        var email = $("#email").val();
+        var number = $("#number").val();
+        var truck = $("#truck").val();
         var body = $("#body").val();
         var key = $("#key").val();
 
@@ -173,7 +176,8 @@ $(document).ready(function() {
             t.objectStore("note")
                 .add({
                     title: title,
-                    email: email,
+                    number: number,
+                    truck: truck,
                     body: body,
                     updated: new Date()
                 });
@@ -181,7 +185,8 @@ $(document).ready(function() {
             t.objectStore("note")
                 .put({
                     title: title,
-                    email: email,
+                    number: number,
+                    truck: truck,
                     body: body,
                     updated: new Date(),
                     id: Number(key)
@@ -191,7 +196,8 @@ $(document).ready(function() {
         t.oncomplete = function(event) {
             $("#key").val("");
             $("#title").val("");
-             $("#email").val("");
+            $("#number").val("");
+             $("#truck").val("");
             $("#body").val("");
             displayNotes();
             $noteForm.hide();
