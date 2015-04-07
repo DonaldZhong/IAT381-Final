@@ -30,9 +30,9 @@ var APP = angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/favourite', {
-        templateUrl: 'views/favourite.html',
-        controller: 'FavouriteCtrl'
+      .when('/book', {
+        templateUrl: 'views/book.html',
+        controller: 'bookCtrl'
       })
       .when('/trucks', {
         templateUrl: 'views/trucks.html',
@@ -46,7 +46,7 @@ var APP = angular
 
   APP.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-      .primaryPalette('blue')
+      .primaryPalette('blue-grey')
       .accentPalette('red');
   });
 
@@ -54,7 +54,7 @@ var APP = angular
     $mdIconProvider
       .icon('home', 'images/home.svg', 64)
       .icon('truck', 'images/truck.svg', 64)
-      .icon('favourite', 'images/favourite.svg', 64)
+      .icon('book', 'images/book.svg', 64)
       .icon('map', 'images/map.svg', 64)
   });
 
@@ -62,7 +62,7 @@ var APP = angular
     var urls = [
       'images/home.svg',
       'images/truck.svg',
-      'images/favourite.svg',
+      'images/book.svg',
       'images/map.svg'
     ];
 
@@ -91,7 +91,7 @@ APP.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
     $scope.items = [
       {name: 'Home',    icon: 'home',       urlPath:'/'},
       {name: 'Trucks',  icon: 'truck',      urlPath:'/trucks'},
-      {name: 'Faves',   icon: 'favourite',  urlPath:'/favourite'},
+      {name: 'Booking',   icon: 'book',  urlPath:'/book'},
       {name: 'Map',     icon: 'map',        urlPath: '/map'}
     ];
 

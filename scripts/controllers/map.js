@@ -21,11 +21,9 @@ APP.controller('MapCtrl', ['$scope', '$http', '$timeout', function($scope, $http
         })
     };
 
-
+    var map;
     var downTownVan = new google.maps.LatLng(49.2827, -123.1207);
 
-    var marker;
-    var map;
 
 
 
@@ -56,6 +54,7 @@ APP.controller('MapCtrl', ['$scope', '$http', '$timeout', function($scope, $http
     });
 
 
+    google.maps.event.addDomListener(window, 'load', map);
 
 
     // var aussie = new google.maps.LatLng(49.284782, -123.114800);
